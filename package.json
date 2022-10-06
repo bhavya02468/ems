@@ -4,8 +4,8 @@
   "main": "abc app",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
+    "start": "node server.js",
+    "docs": "./node_modules/.bin/apidoc -i lib/route/ -o public/apidocs"
   },
   "dependencies": {
     "async": "^3.2.1",
