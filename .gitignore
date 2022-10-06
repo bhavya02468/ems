@@ -1,0 +1,11 @@
+/public/uploads/temp/*
+node_modules
+app.log
+package-lock.json
+/nbproject/private/
+/lib/config/env/local.js
+/lib/config/env/remoteServer.js
+.env
+lib_old
+public_old
+functions
