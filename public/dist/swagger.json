@@ -1,0 +1,267 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "This is a abc app server.",
+		"version": "1.0.0",
+		"title": "abc app",
+		"termsOfService": "http://swagger.io/terms/",
+		"contact": {
+			"email": "developer"
+		}
+	},
+	"host": "",
+	"basePath": "/api",
+	"schemes": [
+		"http",
+		"https"
+	],
+	"paths": {
+		"/v2/admin/login": {
+			"post": {
+				"tags": [
+					"Admin"
+				],
+				"summary": "Login",
+				"description": "",
+				"operationId": "",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "identity",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "key",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string",
+						"minLength": 2
+					},
+					{
+						"name": "device_token",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"status_1": {
+						"description": "Successfully login."
+					}
+				}
+			}
+		},
+		"/v2/admin/change/password": {
+			"put": {
+				"tags": [
+					"Admin"
+				],
+				"summary": "Change Password",
+				"description": "",
+				"operationId": "",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "accessToken",
+						"in": "header",
+						"description": "",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "old_pass",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string",
+						"minLength": 2
+					},
+					{
+						"name": "new_pass",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string",
+						"minLength": 2
+					}
+				],
+				"responses": {
+					"status_1": {
+						"description": "Password successfully changed."
+					}
+				}
+			}
+		},
+		"/v2/admin/forgot/password": {
+			"post": {
+				"tags": [
+					"Admin"
+				],
+				"summary": "Forgot Password",
+				"description": "",
+				"operationId": "",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "email",
+						"in": "formData",
+						"type": "string",
+						"required": true
+					}
+				],
+				"responses": {
+					"status_1": {
+						"description": "Reset Link send successfully."
+					}
+				}
+			}
+		},
+		"/v2/admin/matchCode/resetPassword": {
+			"post": {
+				"tags": [
+					"Admin"
+				],
+				"summary": "Reset Password using link",
+				"description": "",
+				"operationId": "",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "reset_token",
+						"in": "formData",
+						"type": "string",
+						"required": true
+					},
+					{
+						"name": "password",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string",
+						"minLength": 2
+					}
+				],
+				"responses": {
+					"status_1": {
+						"description": "Password reset successfully."
+					}
+				}
+			}
+		},
+		"/v2/user/logout": {
+			"post": {
+				"tags": [
+					"JobSeeker/User"
+				],
+				"summary": "Logout",
+				"description": "",
+				"operationId": "",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "accessToken",
+						"in": "header",
+						"description": "",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "platform",
+						"in": "header",
+						"description": "1 for ios, 2 for android, 3 for web",
+						"required": true,
+						"type": "number",
+						"enum": [ 1, 2, 3 ]
+					}
+				],
+				"responses": {
+					"status_1": {
+						"description": "Logout sucessfully."
+					}
+				}
+			}
+		},
+		"/v2/admin/logout": {
+			"post": {
+				"tags": [
+					"Logout"
+				],
+				"summary": "Admin Logout",
+				"description": "",
+				"operationId": "",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "accessToken",
+						"in": "header",
+						"description": "",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "device_token",
+						"in": "formData",
+						"description": "",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"status_1": {
+						"description": "Logout sucessfully."
+					}
+				}
+			}
+		}
+	},
+	"AdminFreeSubs": {
+		"type": "object",
+		"required": [ "adm_subs" ],
+		"properties": {
+			"adm_subs": {
+				"type": "boolean",
+				"description": "Admin Free Subscription"
+			}
+		}
+	},
+	"securityDefinitions": {
+		"basicAuth": {
+			"type": "basic"
+		}
+	}
+}
