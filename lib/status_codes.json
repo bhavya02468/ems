@@ -1,0 +1,66 @@
+{
+  "intrnlSrvrErr": {
+    "code": 500,
+    "msg": "Internal Server Error."
+  },
+  "unauth_access": {
+    "code": 401,
+    "msg": "Unauthorized access."
+  },
+  "pass_chg_success":{
+    "code": 200,
+    "msg": "Password Reset Successfull"
+  },
+  "unauth_access_id": {
+    "code": 401,
+    "msg": "Access token don't provide any id. Please login again."
+  },
+  "tokenGenError": {
+    "code": 401,
+    "msg": "Error while generating access token."
+  },
+  "pass_not_match": {
+    "code": 400,
+    "msg": "Passwords Do Not Match"
+  },
+  "email_already_exist": {
+    "code": 401,
+    "msg": "email_already_exist"
+  },
+  "incorrect_pass": {
+    "code": 400,
+    "msg": "incorrect_pass"
+  },
+  "admin_not_found": {
+    "code": 404,
+    "msg": "admin_not_found"
+  },
+  "admin_not_active": {
+    "code": 404,
+    "msg": "admin_not_active"
+  },
+  "admin_deleted": {
+    "code": 200,
+    "msg": "Admin deleted succesfully"
+  },
+  "user_not_found": {
+    "code": 404,
+    "msg": "user_not_found"
+  },
+  "Employee_deleted": {
+    "code": 200,
+    "msg": "Employee deleted succesfully"
+  },
+  "employee_not_exists": {
+    "code": 400,
+    "msg": "Employee does not exists"
+  },
+  "employee_not_found": {
+    "code": 404,
+    "msg": "employee_not_found"
+  },
+  "valid_errors": {
+    "code": 400,
+    "msg": "Validation Error"
+  }
+}
