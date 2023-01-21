@@ -1,8 +1,0 @@
-{
-  "success_login": "You have logged in successfully.",
-  "logout": "Logout successfully",
-  "pass_chg_success": "Your password has been updated successfully.",
-  "send_otp_email": "OTP has been sent to registered email successfully.",
-  "user_update_success": "Profile has been updated successfully.",
-  "user_del_success": "User has been deleted successfully"
-}
